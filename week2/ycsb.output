@@ -1,0 +1,42 @@
+c6s2@c6s2-P7xxTM:~/repo/go-ycsb$ ./bin/go-ycsb load mysql -P workloads/workloada -p readcount=1000000000 -p mysql.host=127.0.0.1 -pmysql.port=4000 --threads 256 -pmysql.password=test
+***************** properties *****************
+"dotransactions"="false"
+"insertproportion"="0"
+"requestdistribution"="uniform"
+"operationcount"="1000"
+"mysql.password"="test"
+"updateproportion"="0.5"
+"mysql.port"="4000"
+"readallfields"="true"
+"recordcount"="1000"
+"readcount"="1000000000"
+"scanproportion"="0"
+"readproportion"="0.5"
+"mysql.host"="127.0.0.1"
+"workload"="core"
+"threadcount"="256"
+**********************************************
+INSERT - Takes(s): 10.0, Count: 768, OPS: 76.9, Avg(us): 12265, Min(us): 442, Max(us): 38739, 99th(us): 29000, 99.9th(us): 39000, 99.99th(us): 39000
+Run finished, takes 13.660765325s
+INSERT - Takes(s): 13.7, Count: 768, OPS: 56.2, Avg(us): 12265, Min(us): 442, Max(us): 38739, 99th(us): 29000, 99.9th(us): 39000, 99.99th(us): 39000
+c6s2@c6s2-P7xxTM:~/repo/go-ycsb$ ./bin/go-ycsb run mysql -P workloads/workloada -p readcount=1000000000 -p mysql.host=127.0.0.1 -pmysql.port=4000 --threads 256 -pmysql.password=test
+***************** properties *****************
+"readcount"="1000000000"
+"readallfields"="true"
+"threadcount"="256"
+"recordcount"="1000"
+"dotransactions"="true"
+"operationcount"="1000"
+"requestdistribution"="uniform"
+"updateproportion"="0.5"
+"insertproportion"="0"
+"mysql.port"="4000"
+"mysql.host"="127.0.0.1"
+"mysql.password"="test"
+"readproportion"="0.5"
+"scanproportion"="0"
+"workload"="core"
+**********************************************
+Run finished, takes 344.689486ms
+READ   - Takes(s): 0.3, Count: 371, OPS: 1263.2, Avg(us): 12938, Min(us): 320, Max(us): 53531, 99th(us): 46000, 99.9th(us): 54000, 99.99th(us): 54000
+UPDATE - Takes(s): 0.3, Count: 397, OPS: 1257.2, Avg(us): 39273, Min(us): 1104, Max(us): 240850, 99th(us): 193000, 99.9th(us): 241000, 99.99th(us): 241000
